@@ -3,6 +3,7 @@ package mysql
 import (
 	"database/sql"
 	"errors"
+
 	"github.com/SergeyKozhin/snippetbox/pkg/models"
 )
 

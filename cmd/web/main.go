@@ -3,12 +3,12 @@ package main
 import (
 	"database/sql"
 	"flag"
-	"github.com/SergeyKozhin/snippetbox/pkg/models/mysql"
 	"html/template"
 	"log"
 	"net/http"
 	"os"
 
+	"github.com/SergeyKozhin/snippetbox/pkg/models/mysql"
 	_ "github.com/go-sql-driver/mysql"
 )
 

@@ -1,10 +1,11 @@
 package main
 
 import (
-	"github.com/SergeyKozhin/snippetbox/pkg/models"
 	"html/template"
 	"path/filepath"
 	"time"
+
+	"github.com/SergeyKozhin/snippetbox/pkg/models"
 )
 
 type templateData struct {
