@@ -36,7 +36,7 @@ func main() {
 	srv := &http.Server{
 		Addr:     *addr,
 		ErrorLog: errorLog,
-		Handler:  mux,
+		Handler:  app.route(),
 	}
 
 	infoLog.Printf("Stating server on %s\n", *addr)
