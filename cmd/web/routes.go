@@ -2,7 +2,7 @@ package main
 
 import "net/http"
 
-func (app *application) route() *http.ServeMux {
+func (app *application) route() http.Handler {
 	mux := http.NewServeMux()
 	mux.HandleFunc("/", app.home)
 	mux.HandleFunc("/snippet", app.showSnippet)
@@ -11,5 +11,5 @@ func (app *application) route() *http.ServeMux {
 	fileServer := http.FileServer(http.Dir("./ui/static"))
 	mux.Handle("/static/", http.StripPrefix("/static", fileServer))
 
-	return mux
+	return secureHeaders(mux)
 }
