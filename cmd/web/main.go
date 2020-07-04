@@ -1,11 +1,16 @@
 package main
 
 import (
+	"flag"
 	"log"
 	"net/http"
 )
 
 func main() {
+
+	addr := flag.String("addr", ":8080", "HTTP network address")
+	flag.Parse()
+
 	mux := http.NewServeMux()
 	mux.HandleFunc("/", home)
 	mux.HandleFunc("/snippet", showSnippet)
@@ -15,7 +20,7 @@ func main() {
 
 	mux.Handle("/static/", http.StripPrefix("/static", fileServer))
 
-	log.Println("Stating server on :8080")
-	err := http.ListenAndServe(":8080", mux)
+	log.Printf("Stating server on %s\n", *addr)
+	err := http.ListenAndServe(*addr, mux)
 	log.Fatal(err)
 }
