@@ -49,3 +49,5 @@ out/
 .idea/sbt.xml
 .idea/vcs.xml
 
+# Certificates
+tls/
