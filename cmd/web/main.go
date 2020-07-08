@@ -25,6 +25,10 @@ type application struct {
 	users         *mysql.UserModel
 }
 
+type contextKey string
+
+const contextKeyIsAuthenticated = contextKey("isAuthenticated")
+
 func main() {
 
 	addr := flag.String("addr", ":8080", "HTTP network address")
